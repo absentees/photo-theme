@@ -53,6 +53,14 @@ function load_scripts() {
              '1.0.0',
              false);
 
+         wp_register_script(
+            'vendor',
+            get_template_directory_uri() . '/js/vendor.js',
+            array(),
+            '1.0.0',
+            false);
+
+        wp_enqueue_script('vendor');
         wp_enqueue_script('owl-carousel');
         wp_enqueue_script('custom-scripts');
     }
@@ -61,7 +69,7 @@ add_action('wp_enqueue_scripts', 'load_scripts'); // Add Custom Scripts to wp_he
 
 function load_styles() {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_style('custom-styles', get_template_directory_uri() . '/css/style.css', array(), '1.0');
+        wp_register_style('custom-styles', get_template_directory_uri() . '/css/main.css', array(), '1.0');
         wp_register_style('owl-styles', get_template_directory_uri() . '/css/vendors/owl-carousel/owl.carousel.css', array(), '1.0');
         wp_register_style('owl-theme-styles', get_template_directory_uri() . '/css/vendors/owl-carousel/owl.theme.css', array(), '1.0');
         wp_register_style('owl-transitions-styles', get_template_directory_uri() . '/css/vendors/owl-carousel/owl.transitions.css', array(), '1.0');
