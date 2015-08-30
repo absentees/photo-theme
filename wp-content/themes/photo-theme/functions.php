@@ -46,13 +46,6 @@ function load_scripts() {
             '1.0.0',
             false);
 
-          wp_register_script(
-             'owl-carousel',
-             get_template_directory_uri() . '/js/owl-carousel/owl.carousel.js',
-             array(),
-             '1.0.0',
-             false);
-
          wp_register_script(
             'vendor',
             get_template_directory_uri() . '/js/vendor.js',
@@ -70,14 +63,10 @@ add_action('wp_enqueue_scripts', 'load_scripts'); // Add Custom Scripts to wp_he
 function load_styles() {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         wp_register_style('custom-styles', get_template_directory_uri() . '/css/main.css', array(), '1.0');
-        wp_register_style('owl-styles', get_template_directory_uri() . '/css/vendors/owl-carousel/owl.carousel.css', array(), '1.0');
-        wp_register_style('owl-theme-styles', get_template_directory_uri() . '/css/vendors/owl-carousel/owl.theme.css', array(), '1.0');
-        wp_register_style('owl-transitions-styles', get_template_directory_uri() . '/css/vendors/owl-carousel/owl.transitions.css', array(), '1.0');
+        wp_register_style('slick-styles', get_template_directory_uri() . '/css/vendors/slick.css', array(), '1.0');
 
         // Register CSS
-        wp_enqueue_style('owl-styles');
-        wp_enqueue_style('owl-theme-styles');
-        wp_enqueue_style('owl-transitions-styles');
+        wp_enqueue_style('slick-styles');
         wp_enqueue_style('custom-styles');
 
     }
@@ -111,27 +100,28 @@ add_action( 'admin_menu', 'remove_menu_items' );
 
 
 //Add custom post type
-/*
-function create_post_type_news() {
+
+function create_post_type_photo() {
     //register post type Team for single person or department
-    register_post_type( 'news',
+    register_post_type( 'photo',
         array(
             'labels' => array(
-                'name' => __( 'News Items' ),
-                'singular_name' => __( 'News' ),
-                'all_items' => __( 'All News Items' ),
-                'edit_item' => __( 'Edit News Items' ),
-                'add_new_item' => __( 'Add News Item' )
+                'name' => __( 'Photos' ),
+                'singular_name' => __( 'Photo' ),
+                'all_items' => __( 'All Photos' ),
+                'edit_item' => __( 'Edit Photos' ),
+                'add_new_item' => __( 'Add Photo' )
             ),
-            'rewrite' => array( 'slug' => 'news', 'with_front' => false ),
+            'rewrite' => array( 'slug' => 'photos', 'with_front' => false ),
             'menu_icon' => __( 'dashicons-welcome-widgets-menus'),
-            'supports' => array('title','thumbnail'),
+            'supports' => array('title'),
             'public' => true,
             'has_archive' => true,
         )
     );
 }
-*/
+
+
 
 // Remove Admin bar
 function remove_admin_bar()
@@ -145,5 +135,8 @@ function remove_admin_bar()
 \*------------------------------------*/
 
 // Add custom post types
+add_action('init', 'create_post_type_photo'); // Add custom post type: news
+
+
 //add_action('init', 'create_post_type_news'); // Add custom post type: news
 add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar

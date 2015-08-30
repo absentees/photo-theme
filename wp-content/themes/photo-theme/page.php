@@ -1,45 +1,45 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
 
-			<h1><?php the_title(); ?></h1>
+  <?php
+    $args = array( 'post_type' => 'photo');
+    $loop = new WP_Query( $args );
+  ?>
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+  <?php if ($loop->have_posts()) : ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="carousel">
+      <?php
+        $count = 0;
 
-				<?php the_content(); ?>
+        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+        <div class="item">
+          <img src="<?php
+										$image = get_field('image');
+										$url = $image['sizes']['large'];
+										echo $url;
+										?>" alt="" />
+        </div>
 
-				<br class="clear">
+        <?php endwhile; // end of the loop. ?>
+    </div>
+  <?php else: ?>
+    <p style="color: white; padding-top: 200px;"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+  <?php endif; ?>
 
-				<?php edit_post_link(); ?>
+<script>
+$(document).ready(function() {
 
-			</article>
-			<!-- /article -->
+  $('.carousel').slick({
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear',
+  arrows: false
+  });
+});
 
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+</script>
 
 <?php get_footer(); ?>

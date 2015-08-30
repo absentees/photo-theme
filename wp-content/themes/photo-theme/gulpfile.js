@@ -16,7 +16,8 @@ gulp.task( "jsconcat", function() {
 	return gulp.src([
 			"js/lib/jquery.min.js",
 			"js/lib/conditionizr-4.3.0.min.js",
-			"js/lib/modernizr-2.7.1.min.js"
+			"js/lib/modernizr-2.7.1.min.js",
+      "js/slick/slick.min.js"
 		])
 		.pipe( concat( "vendor.js" ) )
 		.pipe( gulp.dest( "./js" ) );

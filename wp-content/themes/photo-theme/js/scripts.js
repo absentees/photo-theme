@@ -6,7 +6,7 @@
 
 		// DOM ready, take it away
 
-		
+
 		  var menuToggle = $('#js-mobile-menu').unbind();
 		  $('#js-navigation-menu').removeClass("show");
 

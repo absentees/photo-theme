@@ -1,20 +1,14 @@
-// Bitters 1.0.0
-// http://bitters.bourbon.io
-// Copyright 2013-2015 thoughtbot, inc.
-// MIT License
-
-
-// Neat Settings -- uncomment if using Neat -- must be imported before Neat
 @import "../vendors/reset";
 @import "bourbon/bourbon";
-@import "grid-settings";
 @import "neat/neat";
 @import "variables";
-@import "buttons";
-@import "forms";
-@import "lists";
-@import "tables";
 @import "typography";
+
+html, body{
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
 
 .navigation {
   $large-screen: em(860) !default;
@@ -35,15 +29,22 @@
   // Nav menu
   .navigation-wrapper {
     @include clearfix;
-    position: relative;
+    position: fixed;
+    background-color: rgba(0,0,0,0);
+    height: 100px;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+
   }
 
   .logo {
     float: left;
+    color: white;
 
     img {
-      max-height: 2em;
-      padding-right: 1em;
+      max-height: 5em;
+      padding: 1em 4em 0 2em;
     }
   }
 
@@ -52,8 +53,8 @@
 
     @include media ($large-screen) {
       float: left;
-      line-height: 1.5em;
-      padding-top: 0.3em;
+      line-height: 65px;
+      padding-top: 0.9em;
     }
   }
 
@@ -82,6 +83,7 @@
     text-align: right;
     width: 100%;
 
+
     @include media ($large-screen) {
       background: transparent;
       display: inline;
@@ -92,9 +94,54 @@
 
   li.nav-link a {
     display: inline-block;
+    color: white;
+    text-transform:uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+
 
     @include media ($large-screen) {
       padding-right: 1em;
     }
   }
+}
+
+.wrapper{
+///  width: 100%;
+//  min-height: 100%;
+
+  .carousel{
+    //max-height: 100%;
+//    text-align: center;
+    .item{
+      text-align: center;
+      padding-top: 100px;
+      height: 100vh;
+      img{
+        height: calc(100vh - 100px);
+        display: inline;
+      }
+    }
+  }
+
+  .container-long{
+    width: 100%;
+    padding-top: 100px;
+
+    .photo{
+      margin: 50px;
+      text-align: center;
+
+      .photo-title{
+        color: white;
+        text-align: right;
+      }
+
+      img{
+        max-width: 100%;
+        max-height: 700px;
+      }
+    }
+  }
+
 }

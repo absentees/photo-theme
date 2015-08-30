@@ -8,18 +8,17 @@
 
   <?php if ($loop->have_posts()) : ?>
 
-    <div class="carousel">
+    <div class="container-long">
       <?php
         $count = 0;
 
         while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-        <div class="item">
-          <img src="<?php
-										$image = get_field('image');
-										$url = $image['sizes']['large'];
-										echo $url;
-										?>" alt="" />
+        <div class="photo">
+          <img src="<?php $image = get_field('image'); $url = $image['sizes']['large']; echo $url; ?>" alt="" />
+					<p class="photo-title">
+						<?php the_title(); ?>
+					</p>
         </div>
 
         <?php endwhile; // end of the loop. ?>
@@ -27,19 +26,5 @@
   <?php else: ?>
     <p style="color: white; padding-top: 200px;"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; ?>
-
-<script>
-$(document).ready(function() {
-
-  $('.carousel').slick({
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear',
-  arrows: false
-  });
-});
-
-</script>
 
 <?php get_footer(); ?>

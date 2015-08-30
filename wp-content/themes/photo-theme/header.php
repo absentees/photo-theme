@@ -28,15 +28,15 @@
 		<header class="navigation" role="banner">
 		  <div class="navigation-wrapper">
 		    <a href="javascript:void(0)" class="logo">
-		      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png" alt="Logo Image">
+		      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="GEORGE PRENTOSKI LOGO">
 		    </a>
 		    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
 		    <nav role="navigation">
 		      <ul id="js-navigation-menu" class="navigation-menu show">
-		        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
-		        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-		        <li class="nav-link"><a href="javascript:void(0)">Testimonials</a></li>
-		        <li class="nav-link"><a href="javascript:void(0)">Sign up</a></li>
+		        <li class="nav-link"><a href="javascript:void(0)">Menu item 1</a></li>
+		        <li class="nav-link"><a href="javascript:void(0)">Menu item 2</a></li>
+		        <li class="nav-link"><a href="javascript:void(0)">Menu item 3</a></li>
+		        <li class="nav-link"><a href="javascript:void(0)">Menu item </a></li>
 		      </ul>
 		    </nav>
 		  </div>
