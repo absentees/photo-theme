@@ -21,25 +21,11 @@
 										echo $url;
 										?>" alt="" />
         </div>
-
+        
         <?php endwhile; // end of the loop. ?>
     </div>
   <?php else: ?>
     <p style="color: white; padding-top: 200px;"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; ?>
-
-<script>
-$(document).ready(function() {
-
-  $('.carousel').slick({
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear',
-  arrows: false
-  });
-});
-
-</script>
 
 <?php get_footer(); ?>

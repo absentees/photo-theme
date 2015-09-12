@@ -143,24 +143,24 @@ html, body {
       padding: 0; } }
   .navigation ul.navigation-menu.show {
     display: block; }
-.navigation ul li.nav-link {
+.navigation ul li {
   display: block;
   text-align: right;
   width: 100%; }
   @media screen and (min-width: 53.75em) {
-    .navigation ul li.nav-link {
+    .navigation ul li {
       background: transparent;
       display: inline;
       text-decoration: none;
       width: auto; } }
-.navigation li.nav-link a {
+.navigation li a {
   display: inline-block;
   color: white;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2em; }
   @media screen and (min-width: 53.75em) {
-    .navigation li.nav-link a {
+    .navigation li a {
       padding-right: 1em; } }
 
 .wrapper .carousel .item {

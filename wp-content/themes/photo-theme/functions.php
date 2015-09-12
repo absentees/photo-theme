@@ -23,6 +23,7 @@ if (function_exists('add_theme_support'))
 {
 
     // Add Thumbnail Theme Support
+    add_theme_support('menus');
     add_theme_support('post-thumbnails');
     //add_image_size('news-home-hero', 708, 470, true); // Large feature image for main news item on home
 
@@ -34,6 +35,40 @@ if (function_exists('add_theme_support'))
 /*------------------------------------*\
     Functions
 \*------------------------------------*/
+
+// HTML5 Blank navigation
+function html5blank_nav()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'header-menu',
+		'menu'            => '',
+		'container'       => '',
+		'container_class' => '',
+		'container_id'    => '',
+		'menu_class'      => 'nav-link',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => 'wp_page_menu',
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '<ul id="js-navigation-menu" class="navigation-menu show">%3$s</ul>',
+		'depth'           => 0,
+		'walker'          => ''
+		)
+	);
+}
+
+function register_html5_menu()
+{
+    register_nav_menus(array( // Using array to specify more menus if needed
+        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
+    ));
+}
+
+
 
 function load_scripts() {
 	if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
@@ -135,7 +170,8 @@ function remove_admin_bar()
 \*------------------------------------*/
 
 // Add custom post types
-add_action('init', 'create_post_type_photo'); // Add custom post type: news
+//add_action('init', 'create_post_type_photo'); // Add custom post type: news
+add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 
 
 //add_action('init', 'create_post_type_news'); // Add custom post type: news

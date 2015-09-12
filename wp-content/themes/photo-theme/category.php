@@ -1,19 +1,24 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+  <?php if (have_posts()) : ?>
 
-			<h1><?php _e( 'Categories for ', 'html5blank' ); single_cat_title(); ?></h1>
+		    <div class="carousel">
+		      <?php
+		        $count = 0;
 
-			<?php get_template_part('loop'); ?>
+		        while (have_posts() ) :the_post(); ?>
 
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+		        <div class="item">
+		          <img src="<?php
+												$image = get_field('image');
+												$url = $image['sizes']['large'];
+												echo $url;
+												?>" alt="" />
+		        </div>
+			<?php endwhile; // end of the loop. ?>
+    </div>
+  <?php else: ?>
+    <p style="color: white; padding-top: 200px;"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+  <?php endif; ?>
 
 <?php get_footer(); ?>

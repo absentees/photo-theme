@@ -78,7 +78,7 @@ html, body{
   }
 
   // Nav items
-  ul li.nav-link {
+  ul li {
     display: block;
     text-align: right;
     width: 100%;
@@ -92,7 +92,7 @@ html, body{
     }
   }
 
-  li.nav-link a {
+  li a {
     display: inline-block;
     color: white;
     text-transform:uppercase;
