@@ -4,6 +4,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+@import url(https://fonts.googleapis.com/css?family=Oswald);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -369,7 +370,7 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   color: #333;
-  font-family: 'DIN Condensed', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1em;
   line-height: 1.5; }
 
@@ -379,7 +380,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'DIN Condensed', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1em;
   line-height: 1.2;
   margin: 0 0 0.75em; }
@@ -439,7 +440,9 @@ a {
       color: #CECECE;
       float: left;
       padding: 0 1em 0 2em;
-      display: none; }
+      display: none;
+      text-transform: uppercase;
+      font-size: 14px; }
       @media screen and (min-width: 53.75em) {
         .navigation .navigation-wrapper .about-wrapper .about {
           display: block; } }
@@ -475,7 +478,8 @@ a {
   display: block;
   text-align: right;
   width: 100%;
-  padding-right: 2em; }
+  padding-right: 2em;
+  padding-bottom: 1em; }
   @media screen and (min-width: 53.75em) {
     .navigation ul li {
       background: transparent;
@@ -487,8 +491,7 @@ a {
   display: inline-block;
   color: white;
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.2em; }
+  font-size: 1em; }
   @media screen and (min-width: 53.75em) {
     .navigation li a {
       padding-right: 1em; } }
@@ -506,6 +509,10 @@ a {
       top: 50%; }
       @media screen and (min-width: 53.75em) {
         .wrapper .carousel .item img {
+          position: relative;
+          top: auto;
+          transform: none;
+          width: auto;
           height: calc(100vh - 100px);
           display: inline; } }
   .wrapper .controls {
