@@ -1,45 +1,11 @@
 <?php get_header(); ?>
 
-
-  <?php
-    $args = array( 'post_type' => 'photo');
-    $loop = new WP_Query( $args );
-  ?>
-
-  <?php if ($loop->have_posts()) : ?>
-
-    <div class="carousel">
-      <?php
-        $count = 0;
-
-        while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-        <div class="item">
-          <img src="<?php
-										$image = get_field('image');
-										$url = $image['sizes']['large'];
-										echo $url;
-										?>" alt="" />
-        </div>
-
-        <?php endwhile; // end of the loop. ?>
-    </div>
-  <?php else: ?>
-    <p style="color: white; padding-top: 200px;"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<div class="contact-info">
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <?php the_content(); ?>
+  <?php endwhile; else : ?>
+  	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; ?>
-
-<script>
-$(document).ready(function() {
-
-  $('.carousel').slick({
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear',
-  arrows: false
-  });
-});
-
-</script>
+</div>
 
 <?php get_footer(); ?>

@@ -27,16 +27,24 @@
 
 		<header class="navigation" role="banner">
 		  <div class="navigation-wrapper">
-		    <a href="<?php echo site_url(); ?>" class="logo">
-		      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="GEORGE PRENTOSKI LOGO">
-		    </a>
-		    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
+				<div class="about-wrapper">
+					<a href="<?php echo site_url(); ?>" class="logo">
+			      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="GEORGE PRENTOSKI LOGO">
+			    </a>
+					<p class="about">
+						Sydney based photographer <br>
+						<!-- INSTAGRAM: <a href="https://instagram.com/bklv_" target="_blank">@bklv_</a><br>
+						VIMEO: <a href="http://vimeo.com/georgeprentoski">vimeo.com/georgeprentoski</a><br>
+						SOUNDCLOUD: <a href="https://soundcloud.com/bklv420">@bklv420</a><br> -->
+						georgeprentoski@gmail.com
+					</p>
+				</div>
+
+		    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
 		    <nav role="navigation">
-
 						<?php html5blank_nav(); ?>
-
 		    </nav>
-		  </div>
+		  </div> <!-- /nav wrapper -->
 		</header>
 
 

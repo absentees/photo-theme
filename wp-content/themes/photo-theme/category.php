@@ -17,6 +17,14 @@
 		        </div>
 			<?php endwhile; // end of the loop. ?>
     </div>
+    <div class="controls">
+      <div class="prev">
+        <
+      </div>
+      <div class="next">
+        >
+      </div>
+    </div>
   <?php else: ?>
     <p style="color: white; padding-top: 200px;"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
   <?php endif; ?>
