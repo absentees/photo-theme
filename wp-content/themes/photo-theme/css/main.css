@@ -541,7 +541,7 @@ a {
       .wrapper .container-long .photo img {
         max-width: 100%;
         max-height: 700px; }
-  .wrapper .contact-info {
+  .wrapper .content-wrapper {
     float: left;
     display: block;
     margin-right: 2.35765%;
@@ -549,17 +549,17 @@ a {
     margin-left: 8.5298%;
     padding-top: 100px;
     color: #CECECE; }
-    .wrapper .contact-info:last-child {
+    .wrapper .content-wrapper:last-child {
       margin-right: 0; }
     @media screen and (min-width: 53.75em) {
-      .wrapper .contact-info {
+      .wrapper .content-wrapper {
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 48.82117%;
         margin-left: 25.58941%;
         padding-top: 200px; }
-        .wrapper .contact-info:last-child {
+        .wrapper .content-wrapper:last-child {
           margin-right: 0; } }
-    .wrapper .contact-info a {
+    .wrapper .content-wrapper a {
       text-decoration: underline; }
